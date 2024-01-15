@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOT Chatbox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section id="chat-box">
+        <header class="header">
+          <img src="images/arrow.svg" alt="" />
+
+          <div id="profile-header">
+            <div class="user-img">
+              <img
+                id="profile-pic"
+                src="images/profile-pic.svg"
+                alt="profile picture of Hannah"
+              />
+              <img
+                class="active-icon"
+                src="images/active.svg"
+                alt="icon showing user is active"
+              />
+            </div>
+            <div class="header-text">
+              <p class="user-name">Hannah</p>
+              <p class="last-seen">Active 1h ago</p>
+            </div>
+          </div>
+        </header>
+
+        <section class="chatbox-body">
+          <ul class="chatbox-lists">
+            <li class="chat bot">
+              <div class="avatar">
+                <span>
+                  <img src="images/bot.svg" alt="avatar of Bot" />
+                </span>
+              </div>
+              <div class="msg-box bot-msg">
+                <p class="para">👋 Hi there! How can I help?</p>
+              </div>
+            </li>
+          </ul>
+          <div id="set-Scroll"></div>
+        </section>
+
+        <form class="chatbox-form" action="">
+          <input
+            class="input-message"
+            type="text"
+            id="input-message"
+            value=""
+            name="input-message"
+            placeholder="Type a reply..."
+          />
+          <div class="input-icons">
+            <img src="images/gif.svg" alt="" />
+
+            <img src="images/emoji.svg" alt="icon for emojis" />
+
+            <img src="images/file.svg" alt="icon for files and attachment" />
+          </div>
+        </form>
+      </section>
+      <div id="open-chatbox-btn">
+        <br />
+        <img
+          id="open-icon"
+          src="images/arrow.svg"
+          alt="icon to open chat box"
+        />
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
