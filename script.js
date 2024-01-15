@@ -15,7 +15,6 @@ const chatBox = document.querySelector("#chat-box");
 
 // chat box body section where messages are displayed
 const chatBoxBody = document.querySelector(".chatbox-body");
-chatBoxBody.scrollTop = chatBoxBody.scrollHeight;
 
 // chat box unordered list where the lists will be added
 const ChatBoxLists = document.querySelector(".chatbox-lists");
@@ -128,14 +127,19 @@ function showBotResponse(botArrs, className, responseArr, userInput) {
 
     setTimeout(() => {
       count = (count + 1) % botArrs.length;
-    }, 700);
-    return;
+    }, 600);
   }
+  setTimeout(() => {
+    chatBoxBody.scrollTop = chatBox.scrollHeight;
+  }, 600);
   return;
 }
 
 // function to display both user and both messages
 function chatEvent(botMsg, userInput, responseArr, userMsg) {
+  setTimeout(() => {
+    chatBoxBody.scrollTop = chatBox.scrollHeight;
+  });
   if (userInput === userMsg[1]) {
     appendChat(userInput, "user", responseArr);
     showBotResponse(botMsg, "bot", responseArr, userInput);
@@ -150,6 +154,7 @@ function chatEvent(botMsg, userInput, responseArr, userMsg) {
     appendChat(userInput, "user", responseArr);
     showBotResponse(botMsg, "bot", responseArr, userInput);
   }
+
   return;
 }
 
@@ -165,6 +170,7 @@ let userInputArr = [];
 const showChat = (e) => {
   e.preventDefault();
   let userInput = inputMessage.value.trim();
+  if (!userInput) return;
   userInputArr.push(userInput.toLowerCase());
   console.log(userInputArr);
   console.log(userInputArr.indexOf(userInput));
